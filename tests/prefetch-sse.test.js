@@ -31,7 +31,7 @@ test('setup server for SSE tests', async (t) => {
     env: { ...process.env, PORT: String(PORT), DATA_DIR, NODE_ENV: 'test', DAILY_API_QUOTA: '999999', LOG_LEVEL: 'error' },
     stdio: ['ignore', 'pipe', 'pipe']
   });
-  t.teardown(() => {
+  t.after(() => {
     try { child.kill('SIGTERM'); } catch {}
     try { rmSync(DATA_DIR, { recursive: true, force: true }); } catch {}
   });

@@ -8,6 +8,7 @@
     "start": "node server/api.js",
     "dev": "NODE_ENV=development node --watch server/api.js",
     "prefetch": "node scripts/prefetch-places.js",
+    "lint": "echo 'No linter configured' && exit 0",
     "test": "node --test",
     "docker:build": "docker build -t google-maps-timeline-viewer .",
     "docker:up": "docker-compose up -d",

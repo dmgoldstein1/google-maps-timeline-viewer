@@ -65,7 +65,7 @@ test('setup: spawn API server', async (t) => {
   });
 
   // Cleanup on test end
-  t.teardown(() => {
+  t.after(() => {
     try { child?.kill('SIGTERM'); } catch {}
     try { rmSync(DATA_DIR, { recursive: true, force: true }); } catch {}
   });
