@@ -1,0 +1,72 @@
+﻿2025-12-06T22:39:14.6036266Z ##[group]Run actions/checkout@v4
+2025-12-06T22:39:14.6037140Z with:
+2025-12-06T22:39:14.6037663Z   repository: dmgoldstein1/google-maps-timeline-viewer
+2025-12-06T22:39:14.6038547Z   token: ***
+2025-12-06T22:39:14.6039002Z   ssh-strict: true
+2025-12-06T22:39:14.6039463Z   ssh-user: git
+2025-12-06T22:39:14.6039956Z   persist-credentials: true
+2025-12-06T22:39:14.6040437Z   clean: true
+2025-12-06T22:39:14.6040906Z   sparse-checkout-cone-mode: true
+2025-12-06T22:39:14.6041597Z   fetch-depth: 1
+2025-12-06T22:39:14.6042075Z   fetch-tags: false
+2025-12-06T22:39:14.6042540Z   show-progress: true
+2025-12-06T22:39:14.6043018Z   lfs: false
+2025-12-06T22:39:14.6043473Z   submodules: false
+2025-12-06T22:39:14.6043914Z   set-safe-directory: true
+2025-12-06T22:39:14.6044687Z ##[endgroup]
+2025-12-06T22:39:14.7046630Z Syncing repository: dmgoldstein1/google-maps-timeline-viewer
+2025-12-06T22:39:14.7048608Z ##[group]Getting Git version info
+2025-12-06T22:39:14.7049549Z Working directory is '/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer'
+2025-12-06T22:39:14.7050935Z [command]/usr/bin/git version
+2025-12-06T22:39:14.7098838Z git version 2.52.0
+2025-12-06T22:39:14.7223727Z ##[endgroup]
+2025-12-06T22:39:14.7230294Z Temporarily overriding HOME='/home/runner/work/_temp/ac55f18b-8658-4f63-9141-c59bb29788e4' before making global git config changes
+2025-12-06T22:39:14.7231750Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-06T22:39:14.7233126Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer
+2025-12-06T22:39:14.7234937Z Deleting the contents of '/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer'
+2025-12-06T22:39:14.7236061Z ##[group]Initializing the repository
+2025-12-06T22:39:14.7236848Z [command]/usr/bin/git init /home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer
+2025-12-06T22:39:14.7275903Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-06T22:39:14.7277026Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-06T22:39:14.7278296Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-06T22:39:14.7279657Z hint: call:
+2025-12-06T22:39:14.7280348Z hint:
+2025-12-06T22:39:14.7280963Z hint: 	git config --global init.defaultBranch <name>
+2025-12-06T22:39:14.7281827Z hint:
+2025-12-06T22:39:14.7282588Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-06T22:39:14.7283749Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-06T22:39:14.7284535Z hint:
+2025-12-06T22:39:14.7285016Z hint: 	git branch -m <name>
+2025-12-06T22:39:14.7285513Z hint:
+2025-12-06T22:39:14.7286110Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-06T22:39:14.7287161Z Initialized empty Git repository in /home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/.git/
+2025-12-06T22:39:14.7289413Z [command]/usr/bin/git remote add origin https://github.com/dmgoldstein1/google-maps-timeline-viewer
+2025-12-06T22:39:14.7316553Z ##[endgroup]
+2025-12-06T22:39:14.7317269Z ##[group]Disabling automatic garbage collection
+2025-12-06T22:39:14.7320163Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-06T22:39:14.7342030Z ##[endgroup]
+2025-12-06T22:39:14.7342689Z ##[group]Setting up auth
+2025-12-06T22:39:14.7348839Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-06T22:39:14.7372382Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-06T22:39:14.7645586Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-06T22:39:14.7669579Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-06T22:39:14.7835252Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-06T22:39:14.7862560Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-06T22:39:14.8030590Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-06T22:39:14.8058348Z ##[endgroup]
+2025-12-06T22:39:14.8059070Z ##[group]Fetching the repository
+2025-12-06T22:39:14.8066057Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b7b15765812303a374574686d952cd0a52128bef:refs/remotes/origin/main
+2025-12-06T22:39:15.4716184Z From https://github.com/dmgoldstein1/google-maps-timeline-viewer
+2025-12-06T22:39:15.4717504Z  * [new ref]         b7b15765812303a374574686d952cd0a52128bef -> origin/main
+2025-12-06T22:39:15.4742795Z ##[endgroup]
+2025-12-06T22:39:15.4744215Z ##[group]Determining the checkout info
+2025-12-06T22:39:15.4745418Z ##[endgroup]
+2025-12-06T22:39:15.4749127Z [command]/usr/bin/git sparse-checkout disable
+2025-12-06T22:39:15.4781056Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-06T22:39:15.4800041Z ##[group]Checking out the ref
+2025-12-06T22:39:15.4803305Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-12-06T22:39:15.5430826Z Switched to a new branch 'main'
+2025-12-06T22:39:15.5432176Z branch 'main' set up to track 'origin/main'.
+2025-12-06T22:39:15.5441736Z ##[endgroup]
+2025-12-06T22:39:15.5473339Z [command]/usr/bin/git log -1 --format=%H
+2025-12-06T22:39:15.5491687Z b7b15765812303a374574686d952cd0a52128bef

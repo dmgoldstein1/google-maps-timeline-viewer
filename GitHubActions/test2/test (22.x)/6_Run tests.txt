@@ -1,0 +1,75 @@
+﻿2025-12-06T22:39:22.1190943Z ##[group]Run npm test
+2025-12-06T22:39:22.1191182Z [36;1mnpm test[0m
+2025-12-06T22:39:22.1212697Z shell: /usr/bin/bash -e {0}
+2025-12-06T22:39:22.1213019Z ##[endgroup]
+2025-12-06T22:39:22.2045722Z 
+2025-12-06T22:39:22.2046482Z > google-maps-timeline-viewer@2.0.0 test
+2025-12-06T22:39:22.2046993Z > node --test 'tests/**/*.test.js'
+2025-12-06T22:39:22.2047201Z 
+2025-12-06T22:39:22.2609573Z TAP version 13
+2025-12-06T22:39:23.3416732Z # node:fs:1363
+2025-12-06T22:39:23.3420339Z #   const result = binding.mkdir(
+2025-12-06T22:39:23.3421951Z #                          ^
+2025-12-06T22:39:23.3426298Z # Error: EACCES: permission denied, mkdir '/data'
+2025-12-06T22:39:23.3439444Z #     at Object.mkdirSync (node:fs:1363:26)
+2025-12-06T22:39:23.3440577Z #     at sync (/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/node_modules/mkdirp/index.js:74:13)
+2025-12-06T22:39:23.3442223Z #     at Function.sync (/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/node_modules/mkdirp/index.js:80:24)
+2025-12-06T22:39:23.3444311Z #     at new DiskStorage (/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/node_modules/multer/storage/disk.js:21:12)
+2025-12-06T22:39:23.3446143Z #     at module.exports [as diskStorage] (/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/node_modules/multer/storage/disk.js:65:10)
+2025-12-06T22:39:23.3447333Z #     at file:///home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/server/api.js:108:14 {
+2025-12-06T22:39:23.3447788Z #   errno: -13,
+2025-12-06T22:39:23.3447990Z #   code: 'EACCES',
+2025-12-06T22:39:23.3448213Z #   syscall: 'mkdir',
+2025-12-06T22:39:23.3448399Z #   path: '/data'
+2025-12-06T22:39:23.3448568Z # }
+2025-12-06T22:39:23.3448737Z # Node.js v22.21.1
+2025-12-06T22:39:23.3486188Z # Subtest: tests/prefetch-sse.test.js
+2025-12-06T22:39:23.3491287Z not ok 1 - tests/prefetch-sse.test.js
+2025-12-06T22:39:23.3491790Z   ---
+2025-12-06T22:39:23.3492080Z   duration_ms: 1094.587116
+2025-12-06T22:39:23.3492424Z   type: 'test'
+2025-12-06T22:39:23.3493295Z   location: '/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/tests/prefetch-sse.test.js:1:1'
+2025-12-06T22:39:23.3494194Z   failureType: 'testCodeFailure'
+2025-12-06T22:39:23.3494558Z   exitCode: 1
+2025-12-06T22:39:23.3494825Z   signal: ~
+2025-12-06T22:39:23.3495101Z   error: 'test failed'
+2025-12-06T22:39:23.3495412Z   code: 'ERR_TEST_FAILURE'
+2025-12-06T22:39:23.3495724Z   ...
+2025-12-06T22:39:23.3495975Z # node:fs:1363
+2025-12-06T22:39:23.3496334Z #   const result = binding.mkdir(
+2025-12-06T22:39:23.3496720Z #                          ^
+2025-12-06T22:39:23.3497207Z # Error: EACCES: permission denied, mkdir '/data'
+2025-12-06T22:39:23.3497745Z #     at Object.mkdirSync (node:fs:1363:26)
+2025-12-06T22:39:23.3498841Z #     at sync (/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/node_modules/mkdirp/index.js:74:13)
+2025-12-06T22:39:23.3500444Z #     at Function.sync (/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/node_modules/mkdirp/index.js:80:24)
+2025-12-06T22:39:23.3502234Z #     at new DiskStorage (/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/node_modules/multer/storage/disk.js:21:12)
+2025-12-06T22:39:23.3504083Z #     at module.exports [as diskStorage] (/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/node_modules/multer/storage/disk.js:65:10)
+2025-12-06T22:39:23.3505704Z #     at file:///home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/server/api.js:108:14 {
+2025-12-06T22:39:23.3506463Z #   errno: -13,
+2025-12-06T22:39:23.3506762Z #   code: 'EACCES',
+2025-12-06T22:39:23.3507025Z #   syscall: 'mkdir',
+2025-12-06T22:39:23.3507205Z #   path: '/data'
+2025-12-06T22:39:23.3507368Z # }
+2025-12-06T22:39:23.3507522Z # Node.js v22.21.1
+2025-12-06T22:39:23.3507740Z # Subtest: tests/server.test.js
+2025-12-06T22:39:23.3507994Z not ok 2 - tests/server.test.js
+2025-12-06T22:39:23.3508181Z   ---
+2025-12-06T22:39:23.3508612Z   duration_ms: 1023.260507
+2025-12-06T22:39:23.3508800Z   type: 'test'
+2025-12-06T22:39:23.3509261Z   location: '/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/tests/server.test.js:1:1'
+2025-12-06T22:39:23.3509737Z   failureType: 'testCodeFailure'
+2025-12-06T22:39:23.3509942Z   exitCode: 1
+2025-12-06T22:39:23.3510110Z   signal: ~
+2025-12-06T22:39:23.3510272Z   error: 'test failed'
+2025-12-06T22:39:23.3510454Z   code: 'ERR_TEST_FAILURE'
+2025-12-06T22:39:23.3510640Z   ...
+2025-12-06T22:39:23.3510779Z 1..2
+2025-12-06T22:39:23.3510927Z # tests 2
+2025-12-06T22:39:23.3511079Z # suites 0
+2025-12-06T22:39:23.3511225Z # pass 0
+2025-12-06T22:39:23.3512245Z # fail 2
+2025-12-06T22:39:23.3512455Z # cancelled 0
+2025-12-06T22:39:23.3512689Z # skipped 0
+2025-12-06T22:39:23.3512901Z # todo 0
+2025-12-06T22:39:23.3513140Z # duration_ms 1107.745972
+2025-12-06T22:39:23.3598021Z ##[error]Process completed with exit code 1.

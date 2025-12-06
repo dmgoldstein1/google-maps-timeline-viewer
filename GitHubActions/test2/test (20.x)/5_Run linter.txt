@@ -1,0 +1,9 @@
+﻿2025-12-06T22:39:24.0838715Z ##[group]Run npm run lint
+2025-12-06T22:39:24.0838999Z [36;1mnpm run lint[0m
+2025-12-06T22:39:24.0944402Z shell: /usr/bin/bash -e {0}
+2025-12-06T22:39:24.0944686Z ##[endgroup]
+2025-12-06T22:39:24.2095033Z 
+2025-12-06T22:39:24.2095636Z > google-maps-timeline-viewer@2.0.0 lint
+2025-12-06T22:39:24.2096149Z > echo 'No linter configured' && exit 0
+2025-12-06T22:39:24.2096381Z 
+2025-12-06T22:39:24.2138985Z No linter configured

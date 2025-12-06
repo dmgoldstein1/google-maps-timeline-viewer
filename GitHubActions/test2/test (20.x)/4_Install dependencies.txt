@@ -1,0 +1,15 @@
+﻿2025-12-06T22:39:20.8030811Z ##[group]Run npm ci --ignore-scripts || true
+2025-12-06T22:39:20.8031211Z [36;1mnpm ci --ignore-scripts || true[0m
+2025-12-06T22:39:20.8078377Z shell: /usr/bin/bash -e {0}
+2025-12-06T22:39:20.8078648Z ##[endgroup]
+2025-12-06T22:39:23.1294282Z npm warn deprecated supertest@6.3.4: Please upgrade to supertest v7.1.3+, see release notes at https://github.com/forwardemail/supertest/releases/tag/v7.1.3 - maintenance is supported by Forward Email @ https://forwardemail.net
+2025-12-06T22:39:23.5022351Z npm warn deprecated multer@1.4.5-lts.2: Multer 1.x is impacted by a number of vulnerabilities, which have been patched in 2.x. You should upgrade to the latest 2.x version.
+2025-12-06T22:39:23.5376648Z npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+2025-12-06T22:39:23.6405271Z npm warn deprecated superagent@8.1.2: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
+2025-12-06T22:39:24.0618457Z 
+2025-12-06T22:39:24.0619314Z added 204 packages, and audited 205 packages in 3s
+2025-12-06T22:39:24.0619819Z 
+2025-12-06T22:39:24.0620104Z 40 packages are looking for funding
+2025-12-06T22:39:24.0620628Z   run `npm fund` for details
+2025-12-06T22:39:24.0628785Z 
+2025-12-06T22:39:24.0629409Z found 0 vulnerabilities

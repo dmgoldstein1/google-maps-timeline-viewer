@@ -1,0 +1,5 @@
+2025-12-06T22:39:10.1620000Z Requested labels: ubuntu-latest
+2025-12-06T22:39:10.1620000Z Job defined at: dmgoldstein1/google-maps-timeline-viewer/.github/workflows/test.yml@refs/heads/main
+2025-12-06T22:39:10.1620000Z Waiting for a runner to pick up this job...
+2025-12-06T22:39:10.6850000Z Job is waiting for a hosted runner to come online.
+2025-12-06T22:39:10.6860000Z Job is about to start running on the hosted runner: GitHub Actions 1000001741

@@ -1,0 +1,21 @@
+﻿2025-12-06T22:39:22.9950945Z ##[group]Run npm ci --ignore-scripts || true
+2025-12-06T22:39:22.9951519Z [36;1mnpm ci --ignore-scripts || true[0m
+2025-12-06T22:39:22.9990192Z shell: /usr/bin/bash -e {0}
+2025-12-06T22:39:22.9990492Z ##[endgroup]
+2025-12-06T22:39:23.5082847Z npm warn EBADENGINE Unsupported engine {
+2025-12-06T22:39:23.5083867Z npm warn EBADENGINE   package: 'google-maps-timeline-viewer@2.0.0',
+2025-12-06T22:39:23.5084782Z npm warn EBADENGINE   required: { node: '>=20.0.0' },
+2025-12-06T22:39:23.5085646Z npm warn EBADENGINE   current: { node: 'v18.20.8', npm: '10.8.2' }
+2025-12-06T22:39:23.5086292Z npm warn EBADENGINE }
+2025-12-06T22:39:24.4274911Z npm warn deprecated supertest@6.3.4: Please upgrade to supertest v7.1.3+, see release notes at https://github.com/forwardemail/supertest/releases/tag/v7.1.3 - maintenance is supported by Forward Email @ https://forwardemail.net
+2025-12-06T22:39:24.6948884Z npm warn deprecated multer@1.4.5-lts.2: Multer 1.x is impacted by a number of vulnerabilities, which have been patched in 2.x. You should upgrade to the latest 2.x version.
+2025-12-06T22:39:25.0983007Z npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+2025-12-06T22:39:25.1988574Z npm warn deprecated superagent@8.1.2: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
+2025-12-06T22:39:25.6782145Z 
+2025-12-06T22:39:25.6782965Z added 204 packages, and audited 205 packages in 3s
+2025-12-06T22:39:25.6783458Z 
+2025-12-06T22:39:25.6783729Z 40 packages are looking for funding
+2025-12-06T22:39:25.6784354Z   run `npm fund` for details
+2025-12-06T22:39:25.6793228Z 
+2025-12-06T22:39:25.6793545Z found 0 vulnerabilities
+2025-12-06T22:39:25.7084124Z ##[error]The operation was canceled.

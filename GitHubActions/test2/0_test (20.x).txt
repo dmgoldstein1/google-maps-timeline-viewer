@@ -1,0 +1,198 @@
+﻿2025-12-06T22:39:14.2000514Z Current runner version: '2.329.0'
+2025-12-06T22:39:14.2024422Z ##[group]Runner Image Provisioner
+2025-12-06T22:39:14.2025379Z Hosted Compute Agent
+2025-12-06T22:39:14.2025950Z Version: 20251124.448
+2025-12-06T22:39:14.2026521Z Commit: fda5086b43ec66ade217e5fcd18146c879571177
+2025-12-06T22:39:14.2027289Z Build Date: 2025-11-24T21:16:26Z
+2025-12-06T22:39:14.2027858Z ##[endgroup]
+2025-12-06T22:39:14.2028429Z ##[group]Operating System
+2025-12-06T22:39:14.2029075Z Ubuntu
+2025-12-06T22:39:14.2029579Z 24.04.3
+2025-12-06T22:39:14.2030107Z LTS
+2025-12-06T22:39:14.2030617Z ##[endgroup]
+2025-12-06T22:39:14.2031181Z ##[group]Runner Image
+2025-12-06T22:39:14.2031773Z Image: ubuntu-24.04
+2025-12-06T22:39:14.2032500Z Version: 20251126.144.1
+2025-12-06T22:39:14.2033523Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251126.144/images/ubuntu/Ubuntu2404-Readme.md
+2025-12-06T22:39:14.2035095Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251126.144
+2025-12-06T22:39:14.2036139Z ##[endgroup]
+2025-12-06T22:39:14.2038802Z ##[group]GITHUB_TOKEN Permissions
+2025-12-06T22:39:14.2040802Z Actions: write
+2025-12-06T22:39:14.2041401Z ArtifactMetadata: write
+2025-12-06T22:39:14.2041918Z Attestations: write
+2025-12-06T22:39:14.2042967Z Checks: write
+2025-12-06T22:39:14.2043501Z Contents: write
+2025-12-06T22:39:14.2044010Z Deployments: write
+2025-12-06T22:39:14.2044634Z Discussions: write
+2025-12-06T22:39:14.2045114Z Issues: write
+2025-12-06T22:39:14.2045605Z Metadata: read
+2025-12-06T22:39:14.2046138Z Models: read
+2025-12-06T22:39:14.2046679Z Packages: write
+2025-12-06T22:39:14.2047163Z Pages: write
+2025-12-06T22:39:14.2047722Z PullRequests: write
+2025-12-06T22:39:14.2048244Z RepositoryProjects: write
+2025-12-06T22:39:14.2048932Z SecurityEvents: write
+2025-12-06T22:39:14.2049541Z Statuses: write
+2025-12-06T22:39:14.2050057Z ##[endgroup]
+2025-12-06T22:39:14.2052286Z Secret source: Actions
+2025-12-06T22:39:14.2053447Z Prepare workflow directory
+2025-12-06T22:39:14.2373684Z Prepare all required actions
+2025-12-06T22:39:14.2418070Z Getting action download info
+2025-12-06T22:39:14.6890977Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2025-12-06T22:39:15.2318666Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2025-12-06T22:39:15.3210170Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-12-06T22:39:15.5194099Z Complete job name: test (20.x)
+2025-12-06T22:39:15.5787339Z ##[group]Run actions/checkout@v4
+2025-12-06T22:39:15.5788164Z with:
+2025-12-06T22:39:15.5788672Z   repository: dmgoldstein1/google-maps-timeline-viewer
+2025-12-06T22:39:15.5789419Z   token: ***
+2025-12-06T22:39:15.5789801Z   ssh-strict: true
+2025-12-06T22:39:15.5790200Z   ssh-user: git
+2025-12-06T22:39:15.5790609Z   persist-credentials: true
+2025-12-06T22:39:15.5791065Z   clean: true
+2025-12-06T22:39:15.5791469Z   sparse-checkout-cone-mode: true
+2025-12-06T22:39:15.5792138Z   fetch-depth: 1
+2025-12-06T22:39:15.5792533Z   fetch-tags: false
+2025-12-06T22:39:15.5792939Z   show-progress: true
+2025-12-06T22:39:15.5793347Z   lfs: false
+2025-12-06T22:39:15.5793712Z   submodules: false
+2025-12-06T22:39:15.5794130Z   set-safe-directory: true
+2025-12-06T22:39:15.5794815Z ##[endgroup]
+2025-12-06T22:39:15.6862276Z Syncing repository: dmgoldstein1/google-maps-timeline-viewer
+2025-12-06T22:39:15.6864197Z ##[group]Getting Git version info
+2025-12-06T22:39:15.6865241Z Working directory is '/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer'
+2025-12-06T22:39:15.6866472Z [command]/usr/bin/git version
+2025-12-06T22:39:15.6939278Z git version 2.52.0
+2025-12-06T22:39:15.6965981Z ##[endgroup]
+2025-12-06T22:39:15.6981224Z Temporarily overriding HOME='/home/runner/work/_temp/dad4503d-ce0d-4021-bf4b-68cdbfeb2b46' before making global git config changes
+2025-12-06T22:39:15.6983025Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-06T22:39:15.6994903Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer
+2025-12-06T22:39:15.7033185Z Deleting the contents of '/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer'
+2025-12-06T22:39:15.7036494Z ##[group]Initializing the repository
+2025-12-06T22:39:15.7040925Z [command]/usr/bin/git init /home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer
+2025-12-06T22:39:15.7168398Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-12-06T22:39:15.7170027Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2025-12-06T22:39:15.7171606Z hint: to use in all of your new repositories, which will suppress this warning,
+2025-12-06T22:39:15.7172955Z hint: call:
+2025-12-06T22:39:15.7173566Z hint:
+2025-12-06T22:39:15.7174337Z hint: 	git config --global init.defaultBranch <name>
+2025-12-06T22:39:15.7175292Z hint:
+2025-12-06T22:39:15.7176012Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-12-06T22:39:15.7177008Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-12-06T22:39:15.7177774Z hint:
+2025-12-06T22:39:15.7178235Z hint: 	git branch -m <name>
+2025-12-06T22:39:15.7178741Z hint:
+2025-12-06T22:39:15.7179444Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-12-06T22:39:15.7181166Z Initialized empty Git repository in /home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/.git/
+2025-12-06T22:39:15.7186061Z [command]/usr/bin/git remote add origin https://github.com/dmgoldstein1/google-maps-timeline-viewer
+2025-12-06T22:39:15.7219816Z ##[endgroup]
+2025-12-06T22:39:15.7220550Z ##[group]Disabling automatic garbage collection
+2025-12-06T22:39:15.7224118Z [command]/usr/bin/git config --local gc.auto 0
+2025-12-06T22:39:15.7251576Z ##[endgroup]
+2025-12-06T22:39:15.7252437Z ##[group]Setting up auth
+2025-12-06T22:39:15.7258680Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-06T22:39:15.7288323Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-06T22:39:15.7636679Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-06T22:39:15.7667057Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-06T22:39:15.7883703Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-06T22:39:15.7913620Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-06T22:39:15.8151352Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-12-06T22:39:15.8186558Z ##[endgroup]
+2025-12-06T22:39:15.8187968Z ##[group]Fetching the repository
+2025-12-06T22:39:15.8196571Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b7b15765812303a374574686d952cd0a52128bef:refs/remotes/origin/main
+2025-12-06T22:39:16.5847172Z From https://github.com/dmgoldstein1/google-maps-timeline-viewer
+2025-12-06T22:39:16.5847908Z  * [new ref]         b7b15765812303a374574686d952cd0a52128bef -> origin/main
+2025-12-06T22:39:16.5878093Z ##[endgroup]
+2025-12-06T22:39:16.5878602Z ##[group]Determining the checkout info
+2025-12-06T22:39:16.5880692Z ##[endgroup]
+2025-12-06T22:39:16.5885954Z [command]/usr/bin/git sparse-checkout disable
+2025-12-06T22:39:16.5927886Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-12-06T22:39:16.5953659Z ##[group]Checking out the ref
+2025-12-06T22:39:16.5957954Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-12-06T22:39:16.6701523Z Switched to a new branch 'main'
+2025-12-06T22:39:16.6703043Z branch 'main' set up to track 'origin/main'.
+2025-12-06T22:39:16.6710237Z ##[endgroup]
+2025-12-06T22:39:16.6749568Z [command]/usr/bin/git log -1 --format=%H
+2025-12-06T22:39:16.6771757Z b7b15765812303a374574686d952cd0a52128bef
+2025-12-06T22:39:16.6998744Z ##[group]Run actions/setup-node@v4
+2025-12-06T22:39:16.6999074Z with:
+2025-12-06T22:39:16.6999294Z   node-version: 20.x
+2025-12-06T22:39:16.6999517Z   cache: npm
+2025-12-06T22:39:16.6999738Z   always-auth: false
+2025-12-06T22:39:16.6999962Z   check-latest: false
+2025-12-06T22:39:16.7000589Z   token: ***
+2025-12-06T22:39:16.7000926Z ##[endgroup]
+2025-12-06T22:39:16.8773399Z Found in cache @ /opt/hostedtoolcache/node/20.19.6/x64
+2025-12-06T22:39:16.8779676Z ##[group]Environment details
+2025-12-06T22:39:20.3115291Z node: v20.19.6
+2025-12-06T22:39:20.3116046Z npm: 10.8.2
+2025-12-06T22:39:20.3116431Z yarn: 1.22.22
+2025-12-06T22:39:20.3118067Z ##[endgroup]
+2025-12-06T22:39:20.3142161Z [command]/opt/hostedtoolcache/node/20.19.6/x64/bin/npm config get cache
+2025-12-06T22:39:20.5268241Z /home/runner/.npm
+2025-12-06T22:39:20.7917149Z npm cache is not found
+2025-12-06T22:39:20.8030830Z ##[group]Run npm ci --ignore-scripts || true
+2025-12-06T22:39:20.8031217Z [36;1mnpm ci --ignore-scripts || true[0m
+2025-12-06T22:39:20.8078395Z shell: /usr/bin/bash -e {0}
+2025-12-06T22:39:20.8078653Z ##[endgroup]
+2025-12-06T22:39:23.1294349Z npm warn deprecated supertest@6.3.4: Please upgrade to supertest v7.1.3+, see release notes at https://github.com/forwardemail/supertest/releases/tag/v7.1.3 - maintenance is supported by Forward Email @ https://forwardemail.net
+2025-12-06T22:39:23.5022401Z npm warn deprecated multer@1.4.5-lts.2: Multer 1.x is impacted by a number of vulnerabilities, which have been patched in 2.x. You should upgrade to the latest 2.x version.
+2025-12-06T22:39:23.5376695Z npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+2025-12-06T22:39:23.6405415Z npm warn deprecated superagent@8.1.2: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
+2025-12-06T22:39:24.0618507Z 
+2025-12-06T22:39:24.0619323Z added 204 packages, and audited 205 packages in 3s
+2025-12-06T22:39:24.0619826Z 
+2025-12-06T22:39:24.0620109Z 40 packages are looking for funding
+2025-12-06T22:39:24.0620633Z   run `npm fund` for details
+2025-12-06T22:39:24.0628801Z 
+2025-12-06T22:39:24.0629423Z found 0 vulnerabilities
+2025-12-06T22:39:24.0838729Z ##[group]Run npm run lint
+2025-12-06T22:39:24.0839002Z [36;1mnpm run lint[0m
+2025-12-06T22:39:24.0944410Z shell: /usr/bin/bash -e {0}
+2025-12-06T22:39:24.0944688Z ##[endgroup]
+2025-12-06T22:39:24.2095059Z 
+2025-12-06T22:39:24.2095644Z > google-maps-timeline-viewer@2.0.0 lint
+2025-12-06T22:39:24.2096153Z > echo 'No linter configured' && exit 0
+2025-12-06T22:39:24.2096384Z 
+2025-12-06T22:39:24.2138999Z No linter configured
+2025-12-06T22:39:24.2229614Z ##[group]Run npm test
+2025-12-06T22:39:24.2229863Z [36;1mnpm test[0m
+2025-12-06T22:39:24.2263883Z shell: /usr/bin/bash -e {0}
+2025-12-06T22:39:24.2264115Z ##[endgroup]
+2025-12-06T22:39:24.3370078Z 
+2025-12-06T22:39:24.3370615Z > google-maps-timeline-viewer@2.0.0 test
+2025-12-06T22:39:24.3371311Z > node --test 'tests/**/*.test.js'
+2025-12-06T22:39:24.3371582Z 
+2025-12-06T22:39:24.3653248Z Could not find '/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/tests/**/*.test.js'
+2025-12-06T22:39:24.3758448Z ##[error]Process completed with exit code 1.
+2025-12-06T22:39:24.3829681Z ##[group]Run actions/upload-artifact@v4
+2025-12-06T22:39:24.3829951Z with:
+2025-12-06T22:39:24.3830133Z   name: test-results-20.x
+2025-12-06T22:39:24.3830357Z   path: coverage/
+test-results/
+
+2025-12-06T22:39:24.3830576Z   retention-days: 7
+2025-12-06T22:39:24.3830766Z   if-no-files-found: warn
+2025-12-06T22:39:24.3830960Z   compression-level: 6
+2025-12-06T22:39:24.3831384Z   overwrite: false
+2025-12-06T22:39:24.3831566Z   include-hidden-files: false
+2025-12-06T22:39:24.3831775Z ##[endgroup]
+2025-12-06T22:39:24.5971587Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2025-12-06T22:39:24.5975375Z The least common ancestor is /home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer. This will be the root directory of the artifact
+2025-12-06T22:39:24.5992283Z ##[warning]No files were found with the provided path: coverage/
+test-results/. No artifacts will be uploaded.
+2025-12-06T22:39:24.6118819Z Post job cleanup.
+2025-12-06T22:39:24.7079385Z [command]/usr/bin/git version
+2025-12-06T22:39:24.7116355Z git version 2.52.0
+2025-12-06T22:39:24.7160204Z Temporarily overriding HOME='/home/runner/work/_temp/df48eb8c-8392-433d-beef-c9548d1af6f6' before making global git config changes
+2025-12-06T22:39:24.7161721Z Adding repository directory to the temporary git global config as a safe directory
+2025-12-06T22:39:24.7174129Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer
+2025-12-06T22:39:24.7208912Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-12-06T22:39:24.7243086Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-12-06T22:39:24.7474850Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-12-06T22:39:24.7497578Z http.https://github.com/.extraheader
+2025-12-06T22:39:24.7511300Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-12-06T22:39:24.7543994Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-12-06T22:39:24.7770518Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2025-12-06T22:39:24.7806826Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2025-12-06T22:39:24.8136860Z Cleaning up orphan processes

@@ -1,0 +1,10 @@
+﻿2025-12-06T22:39:24.2229605Z ##[group]Run npm test
+2025-12-06T22:39:24.2229860Z [36;1mnpm test[0m
+2025-12-06T22:39:24.2263876Z shell: /usr/bin/bash -e {0}
+2025-12-06T22:39:24.2264113Z ##[endgroup]
+2025-12-06T22:39:24.3370051Z 
+2025-12-06T22:39:24.3370608Z > google-maps-timeline-viewer@2.0.0 test
+2025-12-06T22:39:24.3371306Z > node --test 'tests/**/*.test.js'
+2025-12-06T22:39:24.3371578Z 
+2025-12-06T22:39:24.3653212Z Could not find '/home/runner/work/google-maps-timeline-viewer/google-maps-timeline-viewer/tests/**/*.test.js'
+2025-12-06T22:39:24.3758427Z ##[error]Process completed with exit code 1.
