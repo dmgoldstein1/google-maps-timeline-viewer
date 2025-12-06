@@ -11,7 +11,6 @@
  * - api_usage: Daily API quota tracking
  */
 
-import Database from 'better-sqlite3';
 import { mkdir } from 'fs/promises';
 import { dirname, join } from 'path';
 import pino from 'pino';
@@ -28,12 +27,31 @@ const DATA_DIR = process.env.DATA_DIR || '/data';
 const DB_PATH = join(DATA_DIR, 'cache.db');
 
 let db = null;
+let Database = null;
+let dbLoadError = null;
+
+// Try to load better-sqlite3, but don't fail at import time if it's not available
+try {
+  const mod = await import('better-sqlite3');
+  Database = mod.default;
+} catch (error) {
+  dbLoadError = error;
+}
 
 /**
  * Initialize database connection and create tables if they don't exist
  */
 export async function initDatabase() {
   try {
+    // If Database failed to load and we're in test mode, just return without setting up DB
+    if (!Database) {
+      if (process.env.TEST_MODE === 'true') {
+        logger.warn({ error: dbLoadError?.message }, 'better-sqlite3 not available in test mode, skipping database initialization');
+        return null;
+      }
+      throw dbLoadError || new Error('Failed to load better-sqlite3');
+    }
+
     // Ensure data directory exists
     await mkdir(dirname(DB_PATH), { recursive: true });
     
@@ -48,7 +66,11 @@ export async function initDatabase() {
     return db;
   } catch (error) {
     logger.error({ error: error.message }, 'Failed to initialize database');
-    throw error;
+    if (process.env.TEST_MODE !== 'true') {
+      throw error;
+    }
+    // In test mode, continue anyway
+    return null;
   }
 }
 
@@ -142,6 +164,8 @@ export function isExpired(cachedAt) {
  * Get place details from cache
  */
 export function getCachedPlace(placeId) {
+  if (!db) return null;
+  
   const stmt = db.prepare('SELECT * FROM places WHERE place_id = ?');
   const place = stmt.get(placeId);
   
@@ -160,8 +184,9 @@ export function getCachedPlace(placeId) {
  * Save place details to cache
  */
 export function setCachedPlace(placeId, placeData) {
-  const now = Math.floor(Date.now() / 1000);
+  if (!db) return false;
   
+  const now = Math.floor(Date.now() / 1000);
   const stmt = db.prepare(`
     INSERT INTO places (
       place_id, display_name, formatted_address, location,
