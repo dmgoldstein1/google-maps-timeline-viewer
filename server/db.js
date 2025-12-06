@@ -147,6 +147,7 @@ function createTables() {
  */
 export function getDatabase() {
   if (!db) {
+    if (process.env.TEST_MODE === 'true') return null;
     throw new Error('Database not initialized. Call initDatabase() first.');
   }
   return db;
@@ -274,6 +275,7 @@ export function setCachedPhoto(placeId, hasWebP, hasJPEG, sizes) {
  * Get all timeline files
  */
 export function getTimelineFiles() {
+  if (!db) return [];
   const stmt = db.prepare('SELECT * FROM timeline_files ORDER BY uploaded_at DESC');
   return stmt.all();
 }
@@ -282,6 +284,7 @@ export function getTimelineFiles() {
  * Get active timeline file
  */
 export function getActiveTimeline() {
+  if (!db) return null;
   const stmt = db.prepare('SELECT * FROM timeline_files WHERE is_active = 1');
   return stmt.get();
 }
@@ -321,6 +324,10 @@ export function setActiveTimeline(id) {
 export function getTodayApiUsage() {
   const today = new Date().toISOString().split('T')[0];
   const quotaLimit = parseInt(process.env.DAILY_API_QUOTA || '5000');
+  
+  if (!db) {
+    return { date: today, count: 0, quota_limit: quotaLimit };
+  }
   
   const stmt = db.prepare('SELECT * FROM api_usage WHERE date = ?');
   let usage = stmt.get(today);

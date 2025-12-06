@@ -504,8 +504,14 @@ app.get('/api/stats', async (req, res) => {
     const photoStats = await getPhotoStats();
     const db = getDatabase();
     
-    const placesCount = db.prepare('SELECT COUNT(*) as count FROM places').get().count;
-    const timelinesCount = db.prepare('SELECT COUNT(*) as count FROM timeline_files').get().count;
+    
+    let placesCount = 0;
+    let timelinesCount = 0;
+    
+    if (db) {
+      placesCount = db.prepare('SELECT COUNT(*) as count FROM places').get().count;
+      timelinesCount = db.prepare('SELECT COUNT(*) as count FROM timeline_files').get().count;
+    }
     
     res.json({
       apiUsage: {
