@@ -15,6 +15,7 @@ import { join } from 'node:path';
 
 // Set test mode before importing app to handle database initialization gracefully
 process.env.TEST_MODE = 'true';
+process.env.NODE_ENV = 'test';
 process.env.LOG_LEVEL = 'error';
 
 import { app, initializeApp } from '../server/api.js';
