@@ -641,14 +641,38 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
+// Export app and initialization function for testing
+export { app, logger };
+
+/**
+ * Initialize app (database, photos directory)
+ */
+export async function initializeApp() {
+  try {
+    await initDatabase();
+  } catch (error) {
+    // In test mode, we can continue even if database initialization fails
+    if (process.env.TEST_MODE !== 'true') {
+      throw error;
+    }
+    logger.warn({ error: error.message }, 'Database initialization failed (continuing in test mode)');
+  }
+  
+  try {
+    await initPhotosDirectory();
+  } catch (error) {
+    // In test mode, we can continue even if photos directory initialization fails
+    if (process.env.TEST_MODE !== 'true') {
+      throw error;
+    }
+    logger.warn({ error: error.message }, 'Photos directory initialization failed (continuing in test mode)');
+  }
+}
+
 // Initialize and start server
 async function start() {
   try {
-    // Initialize database
-    await initDatabase();
-    
-    // Initialize photos directory
-    await initPhotosDirectory();
+    await initializeApp();
     
     // Start server
     app.listen(PORT, () => {
@@ -661,4 +685,7 @@ async function start() {
   }
 }
 
-start();
+// Only start if this is the main module
+if (import.meta.url === `file://${process.argv[1]}`) {
+  start();
+}

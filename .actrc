@@ -1,0 +1,2 @@
+-P ubuntu-latest=node:22-slim
+--network host
