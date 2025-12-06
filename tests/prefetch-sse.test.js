@@ -50,3 +50,8 @@ test('GET /api/prefetch/progress returns SSE stream', async () => {
   assert.ok(response.headers['content-type'].includes('text/event-stream'));
 });
 
+// Force exit after tests complete to avoid hanging on open file descriptors
+process.exitCode = 0;
+process.on('beforeExit', () => {
+  process.exit(0);
+});

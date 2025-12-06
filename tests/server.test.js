@@ -75,3 +75,9 @@ test('GET /api/stats returns expected shape', async () => {
   assert.ok(typeof response.body.cache.placesCount === 'number');
   assert.ok(response.body.photos);
 });
+
+// Force exit after tests complete to avoid hanging on open file descriptors
+process.exitCode = 0;
+process.on('beforeExit', () => {
+  process.exit(0);
+});
