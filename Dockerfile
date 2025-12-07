@@ -33,6 +33,7 @@ RUN apt-get update && apt-get install -y \
     libvips-dev \
     curl \
     ca-certificates \
+    gnupg \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Caddy
