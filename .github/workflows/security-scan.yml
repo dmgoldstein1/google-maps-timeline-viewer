@@ -2,8 +2,9 @@
 #
 # Security Scanning Workflow
 # 
-# Performs security vulnerability scanning using Snyk
+# Performs security vulnerability scanning using Trivy
 # Runs on: push to main, pull requests, and weekly schedule
+# Note: Snyk scans are disabled (require SNYK_TOKEN secret)
 
 name: Security Scan
 
@@ -18,76 +19,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  snyk-scan:
+  trivy-scan:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       security-events: write
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run Snyk SCA scan
-        uses: snyk/actions/node@master
-        continue-on-error: true
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          args: --severity-threshold=high --sarif-file-output=snyk-sca.sarif
-
-      - name: Upload Snyk SCA results to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v3
-        if: always()
-        with:
-          sarif_file: snyk-sca.sarif
-
-  container-scan:
-    runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request'
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Build Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          load: true
-          tags: timeline-viewer:test
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-
-      - name: Run Snyk Container scan
-        uses: snyk/actions/docker@master
-        continue-on-error: true
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          image: timeline-viewer:test
-          args: --severity-threshold=high --file=Dockerfile --sarif-file-output=snyk-container.sarif
-
-      - name: Upload container scan results
-        uses: github/codeql-action/upload-sarif@v3
-        if: always()
-        with:
-          sarif_file: snyk-container.sarif
-
-  trivy-scan:
-    runs-on: ubuntu-latest
     
     steps:
       - name: Checkout repository
@@ -107,3 +43,41 @@ jobs:
         if: always()
         with:
           sarif_file: 'trivy-results.sarif'
+
+  trivy-container-scan:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    permissions:
+      contents: read
+      security-events: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          load: true
+          tags: timeline-viewer:test
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Run Trivy container scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'image'
+          image-ref: 'timeline-viewer:test'
+          format: 'sarif'
+          output: 'trivy-container-results.sarif'
+          severity: 'CRITICAL,HIGH'
+
+      - name: Upload Trivy container results to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: 'trivy-container-results.sarif'
