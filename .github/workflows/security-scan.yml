@@ -43,22 +43,13 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --severity-threshold=high --all-projects
+          args: --severity-threshold=high --sarif-file-output=snyk-sca.sarif
 
-      - name: Run Snyk Code scan
-        uses: snyk/actions/node@master
-        continue-on-error: true
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          command: code test
-          args: --severity-threshold=high
-
-      - name: Upload Snyk results to GitHub Code Scanning
+      - name: Upload Snyk SCA results to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v3
         if: always()
         with:
-          sarif_file: snyk.sarif
+          sarif_file: snyk-sca.sarif
 
   container-scan:
     runs-on: ubuntu-latest
@@ -87,13 +78,13 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           image: timeline-viewer:test
-          args: --severity-threshold=high --file=Dockerfile
+          args: --severity-threshold=high --file=Dockerfile --sarif-file-output=snyk-container.sarif
 
       - name: Upload container scan results
         uses: github/codeql-action/upload-sarif@v3
         if: always()
         with:
-          sarif_file: snyk.sarif
+          sarif_file: snyk-container.sarif
 
   trivy-scan:
     runs-on: ubuntu-latest
