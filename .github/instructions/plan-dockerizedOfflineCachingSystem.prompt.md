@@ -185,8 +185,8 @@ Create `.github/workflows/docker-build.yml`:
    - Tests image processing
 
 2. **security-scan**:
-   - Runs Snyk container scan per `.github/instructions/snyk_rules.instructions.md`
-   - Fails on high severity vulnerabilities
+   - Runs Trivy vulnerability scans (filesystem and container)
+   - Checks for CRITICAL and HIGH severity vulnerabilities
    - Uploads results to GitHub Security tab
 
 3. **build-and-push**:
@@ -256,7 +256,7 @@ docker run --rm -v timeline-data:/data -v $(pwd):/backup ubuntu tar xzf /backup/
 
 - All code should include Copilot generation comments as per instruction files
 - Multi-architecture Docker builds as required by instruction files
-- Security scanning with Snyk as per `.github/instructions/snyk_rules.instructions.md`
+- Security scanning with Trivy for vulnerability detection
 - No emojis in code per instruction files
 - All container build scripts support both x86 and ARM architectures
 - Comprehensive error handling with detailed logging

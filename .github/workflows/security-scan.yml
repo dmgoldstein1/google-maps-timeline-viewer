@@ -4,7 +4,6 @@
 # 
 # Performs security vulnerability scanning using Trivy
 # Runs on: push to main, pull requests, and weekly schedule
-# Note: Snyk scans are disabled (require SNYK_TOKEN secret)
 
 name: Security Scan
 
