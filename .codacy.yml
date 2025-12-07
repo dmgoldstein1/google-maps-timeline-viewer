@@ -1,0 +1,94 @@
+# Codacy Configuration
+# For google-maps-timeline-viewer
+# Targets: Node.js 20+, ES2020+ (ESM)
+
+version: 2
+
+exclude-paths:
+  - node_modules
+  - dist
+  - build
+  - .git
+
+tools:
+  # ESLint for JavaScript code quality
+  eslint:
+    enabled: true
+    
+  # PMD for code analysis (disabled - too strict for modern Node.js)
+  pmd:
+    enabled: false
+    
+  # Trivy for vulnerability scanning
+  trivy:
+    enabled: true
+
+# Language configuration
+languages:
+  javascript:
+    # Target Node.js 20+ with ES2020+ features
+    # This is an ESM project with "type": "module"
+    ecmaVersion: 2020
+    sourceType: module
+    
+    # Enable modern features
+    features:
+      es2015: true      # const/let, arrow functions, classes
+      es2016: true      # exponentiation operator
+      es2017: true      # async/await
+      es2018: true      # rest/spread properties
+      es2019: true      # optional catch binding
+      es2020: true      # optional chaining, nullish coalescing
+      es2021: true      # logical assignment, numeric separators
+      globalReturn: false
+    
+    # Node.js globals available
+    environment: node
+
+# Code quality rules
+quality:
+  # Compatibility issues (disabled - incompatible with project target)
+  - "Compatibility"
+  
+  # Error-prone patterns
+  - "ErrorProne"
+  
+  # Performance issues
+  - "Performance"
+  
+  # Code style
+  - "CodeStyle"
+  
+  # Unused code
+  - "UnusedCode"
+
+# Disabled rules that are false positives for Node.js 20+ ESM
+disabled-rules:
+  # ES5 compatibility is not a target - project requires Node 20+
+  - "ES5 'Date.now' method is forbidden"
+  - "ES2015 block-scoped variables are forbidden"
+  - "ES2015 arrow function expressions are forbidden"
+  - "ES2015 modules are forbidden"
+  - "ES2015 template literals are forbidden"
+  - "ES2015 property shorthands are forbidden"
+  - "ES2017 async function declarations are forbidden"
+  - "ES2018 rest/spread properties are forbidden"
+  - "Compatibility"
+  
+  # Node.js built-in modules are required
+  - "Do not import Node.js builtin module"
+  
+  # JSON and null are necessary in JavaScript
+  - "Unallowed use of null"
+  - "Unallowed use of undefined"
+  - "Invalid usage of async-await"  # Pattern is correct for Node.js
+
+# Security rules
+security:
+  enabled: true
+  levels:
+    - "Severity1"
+    - "Severity2"
+    - "Severity3"
+    - "Severity4"
+    - "Severity5"
