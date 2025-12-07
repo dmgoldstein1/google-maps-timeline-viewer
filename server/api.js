@@ -102,15 +102,21 @@ app.use((req, res, next) => {
 });
 
 // File upload configuration - use memory storage in test mode to avoid permission issues
-let multerStorage;
-if (process.env.TEST_MODE === 'true') {
-  multerStorage = multer.memoryStorage();
-} else {
-  multerStorage = multer.diskStorage({ destination: TIMELINE_DIR });
+// Using a getter function to defer initialization until after TEST_MODE environment variable is set
+let _multerStorage = null;
+function getMulterStorage() {
+  if (_multerStorage === null) {
+    if (process.env.TEST_MODE === 'true') {
+      _multerStorage = multer.memoryStorage();
+    } else {
+      _multerStorage = multer.diskStorage({ destination: TIMELINE_DIR });
+    }
+  }
+  return _multerStorage;
 }
 
 const upload = multer({
-  storage: multerStorage,
+  storage: getMulterStorage,
   limits: { fileSize: 25 * 1024 * 1024 },
   fileFilter: (req, file, cb) => {
     const ok = ['application/json','text/json','text/plain','application/octet-stream'];
